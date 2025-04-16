@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WAVIoT | Умные счетчики</title>
+    <link rel="stylesheet" type="text/css" href="style/style.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Animation styles (keeping these in the HTML for immediate effect) */
+        .feature-card, .use-case {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .feature-card.visible, .use-case.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a class="logo" href="#"><img src="assets/logo.png" alt="WAVIoT"></a>
+            <div class="nav">
+                <a href="#" class="nav-link">Наш сайт</a>
+            </div>
+        </header>
+
+        <section class="hero">
+            <h1>1 проект — до 1 млн ₸ вам, минус месяц застройщику</h1>
+            <p>Счётчики WAVIoT: вода и электричество. Монтаж за день. Все документы, BIM и техподдержка — бесплатно.</p>
+            <div class="btn-block">
+                <button class="btn">Получить комплект</button>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2><img src="assets/idea-icon.svg" alt="Идея" width="24" height="24" style="vertical-align: middle; margin-right: 8px;"> 3 причины выбрать WAVIoT</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <img src="assets/reason-img-1.png" alt="Строительная площадка" class="feature-img">
+                    <div class="feature-text">Сдача объекта быстрее на 30 дней</div>
+                </div>
+                <div class="feature-card">
+                    <img src="assets/reason-img-2.png" alt="Деньги" class="feature-img">
+                    <div class="feature-text">До 1 000 000 ₸ — ваш доход за проект</div>
+                </div>
+                <div class="feature-card">
+                    <img src="assets/reason-img-3.png" alt="Монтаж электрощита" class="feature-img">
+                    <div class="feature-text">Монтаж за 1 день, шкаф УСПД не нужен!</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits">
+            <h2>Что вы получаете?</h2>
+            <div class="benefits-container">
+                <ol>
+                    <li>BIM-модели (Revit / IFC)</li>
+                    <li>Технические условия, схемы, паспорта</li>
+                    <li>Инженерная поддержка — бесплатно</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="use-cases">
+            <h2>Кому подходит?</h2>
+            <div class="use-case-grid">
+                <div class="use-case">
+                    <img src="assets/build-item-1.png" alt="Жилой комплекс" />
+                    <div class="use-case-title">Жилые комплексы</div>
+                </div>
+                <div class="use-case">
+                    <img src="assets/build-item-2.png" alt="Бизнес-центр" />
+                    <div class="use-case-title">Бизнес-центры</div>
+                </div>
+                <div class="use-case">
+                    <img src="assets/build-item-3.png" alt="Школа" />
+                    <div class="use-case-title">Реновации и школы</div>
+                </div>
+                <div class="use-case">
+                    <img src="assets/build-item-4.png" alt="Муниципальный проект" />
+                    <div class="use-case-title">Муниципальные проекты</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact">
+            <h2>Контакты</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <a href="tel:+77777777777" class="contact-link">Тел: +7 777 777 77 77</a>
+                    <a href="mailto:sales@waviot.kz" class="contact-link">Эл. почта: sales@waviot.kz</a>
+
+                    <div class="social-links">
+                        <a href="#" class="social-icon whatsapp">
+                            <img src="assets/WhatsApp.svg" alt="WhatsApp" width="20" height="20">
+                        </a>
+                        <a href="#" class="social-icon telegram">
+                            <img src="assets/TelegramApp.svg" alt="Telegram" width="20" height="20">
+                        </a>
+                    </div>
+
+                    <div class="office-address">
+                        <p>Наш офис</p>
+                        <p>Астана, ул. Мәңгілік Ел, 55/16 (здание МФЦА), Блок С 3.1, Каб. 318</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

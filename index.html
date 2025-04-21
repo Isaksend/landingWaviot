@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>WAVIoT | Умные счетчики</title>
@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <style>
-        /* Animation styles (keeping these in the HTML for immediate effect) */
         .feature-card, .use-case {
             opacity: 0;
             transform: translateY(20px);
@@ -41,16 +40,13 @@
         <section class="features">
             <h2><img src="assets/idea-icon.svg" alt="Идея" width="24" height="24" style="vertical-align: middle; margin-right: 8px;"> 3 причины выбрать WAVIoT</h2>
             <div class="features-grid">
-                <div class="feature-card">
-                    <img src="assets/reason-img-1.png" alt="Строительная площадка" class="feature-img">
+                <div class="feature-card card-1">
                     <div class="feature-text">Сдача объекта быстрее на 30 дней</div>
                 </div>
-                <div class="feature-card">
-                    <img src="assets/reason-img-2.png" alt="Деньги" class="feature-img">
+                <div class="feature-card card-2">
                     <div class="feature-text">До 1 000 000 ₸ — ваш доход за проект</div>
                 </div>
-                <div class="feature-card">
-                    <img src="assets/reason-img-3.png" alt="Монтаж электрощита" class="feature-img">
+                <div class="feature-card card-3">
                     <div class="feature-text">Монтаж за 1 день, шкаф УСПД не нужен!</div>
                 </div>
             </div>
@@ -70,20 +66,16 @@
         <section class="use-cases">
             <h2>Кому подходит?</h2>
             <div class="use-case-grid">
-                <div class="use-case">
-                    <img src="assets/build-item-1.png" alt="Жилой комплекс" />
+                <div class="use-case case-1">
                     <div class="use-case-title">Жилые комплексы</div>
                 </div>
-                <div class="use-case">
-                    <img src="assets/build-item-2.png" alt="Бизнес-центр" />
+                <div class="use-case case-2">
                     <div class="use-case-title">Бизнес-центры</div>
                 </div>
-                <div class="use-case">
-                    <img src="assets/build-item-3.png" alt="Школа" />
+                <div class="use-case case-3">
                     <div class="use-case-title">Реновации и школы</div>
                 </div>
-                <div class="use-case">
-                    <img src="assets/build-item-4.png" alt="Муниципальный проект" />
+                <div class="use-case case-4">
                     <div class="use-case-title">Муниципальные проекты</div>
                 </div>
             </div>
@@ -92,29 +84,152 @@
         <section class="contact">
             <h2>Контакты</h2>
             <div class="contact-container">
-                <div class="contact-info">
-                    <a href="tel:+77777777777" class="contact-link">Тел: +7 777 777 77 77</a>
-                    <a href="mailto:sales@waviot.kz" class="contact-link">Эл. почта: sales@waviot.kz</a>
-
+                <div class="contact-links">
                     <div class="social-links">
                         <a href="#" class="social-icon whatsapp">
-                            <img src="assets/WhatsApp.svg" alt="WhatsApp" width="20" height="20">
+                            <img src="assets/WhatsApp.svg" alt="WhatsApp" width="70" height="70">
                         </a>
                         <a href="#" class="social-icon telegram">
-                            <img src="assets/TelegramApp.svg" alt="Telegram" width="20" height="20">
+                            <img src="assets/TelegramApp.svg" alt="Telegram" width="70" height="70">
                         </a>
                     </div>
-
+                </div>
+                <div class="contact-info">
+                    <a href="tel:+77777777777" class="contact-link">Тел: <div class="bold-text">+7 777 777 77 77</div></a>
+                    <a href="mailto:sales@waviot.kz" class="contact-link">Эл. почта: <div class="bold-text">sales@waviot.kz</div></a>
                     <div class="office-address">
                         <p>Наш офис</p>
-                        <p>Астана, ул. Мәңгілік Ел, 55/16 (здание МФЦА), Блок С 3.1, Каб. 318</p>
+                        <p class="bold-text">Астана, ул. Мәңгілік Ел, 55/16 (здание МФЦА),<br/> Блок С 3.1, Каб. 318</p>
                     </div>
                 </div>
             </div>
         </section>
     </div>
+    <!-- Modal Window -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3>Получите BIM-модель + инструкции и узнайте, как заработать на проекте</h3>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Имя</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="company">Компания</label>
+                    <input type="text" id="company" name="company" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Телефон</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+7 7__ ___ ___" required>
+                </div>
+                <button type="submit" class="submit-btn">Получить комплект</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
 
-    <!-- External JavaScript -->
-    <script src="script.js"></script>
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Add simple fade-in animation for elements when they come into view
+            const fadeInElements = document.querySelectorAll('.feature-card, .use-case');
+
+            // Create IntersectionObserver instance
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                root: null,
+                threshold: 0.3,
+                rootMargin: '0px'
+            });
+
+            // Observe each element
+            fadeInElements.forEach(element => {
+                observer.observe(element);
+            });
+
+            // Modal functionality
+            const modal = document.getElementById('modal');
+            const btn = document.querySelector('.btn');
+            const closeButton = document.querySelector('.close-button');
+            const contactForm = document.getElementById('contactForm');
+
+            // Open modal when button is clicked
+            btn.addEventListener('click', function() {
+                openModal();
+            });
+
+            // Close modal when the × is clicked
+            closeButton.addEventListener('click', function() {
+                closeModal();
+            });
+
+            // Close modal when clicking outside of it
+            window.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    closeModal();
+                }
+            });
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape' && modal.classList.contains('show')) {
+                    closeModal();
+                }
+            });
+
+            // Handle form submission
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                // Here you would typically send the form data to your server
+                // For demonstration, we'll just log it and close the modal
+                const formData = new FormData(contactForm);
+                const formDataObject = {};
+                formData.forEach((value, key) => {
+                    formDataObject[key] = value;
+                });
+
+                console.log('Form submitted:', formDataObject);
+
+                // Show success message
+                alert('Спасибо за вашу заявку! Мы свяжемся с вами в ближайшее время.');
+
+                // Reset form and close modal
+                contactForm.reset();
+                closeModal();
+            });
+
+            function openModal() {
+                modal.style.display = 'flex';
+                setTimeout(() => {
+                    modal.classList.add('show');
+                }, 10);
+                document.body.style.overflow = 'hidden'; // Prevent scrolling behind modal
+            }
+
+            function closeModal() {
+                modal.classList.remove('show');
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                }, 300); // Match transition duration
+                document.body.style.overflow = ''; // Restore scrolling
+            }
+        });
+    </script>
 </body>
 </html>

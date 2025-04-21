@@ -105,131 +105,36 @@
             </div>
         </section>
     </div>
-    <!-- Modal Window -->
+    <!-- Код модального окна - добавьте перед закрывающим тегом </body> -->
     <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close-button">&times;</span>
             <h3>Получите BIM-модель + инструкции и узнайте, как заработать на проекте</h3>
-            <form id="contactForm">
-                <div class="form-group">
-                    <label for="name">Имя</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="company">Компания</label>
-                    <input type="text" id="company" name="company" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Телефон</label>
-                    <input type="tel" id="phone" name="phone" placeholder="+7 7__ ___ ___" required>
-                </div>
-                <button type="submit" class="submit-btn">Получить комплект</button>
-            </form>
+            <div id="formContainer">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Имя</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Компания</label>
+                        <input type="text" id="company" name="company" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Телефон</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+7 7__ ___ ___" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Получить комплект</button>
+                </form>
+            </div>
+            <div id="successMessage" class="success-message">
+                <div class="success-icon"></div>
+                <div class="success-title">Спасибо!</div>
+                <div class="success-text">Ваша заявка успешно отправлена. Мы свяжемся с вами в ближайшее время.</div>
+                <button class="success-button" id="closeSuccessBtn">Закрыть</button>
+            </div>
         </div>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-
-            // Add simple fade-in animation for elements when they come into view
-            const fadeInElements = document.querySelectorAll('.feature-card, .use-case');
-
-            // Create IntersectionObserver instance
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                root: null,
-                threshold: 0.3,
-                rootMargin: '0px'
-            });
-
-            // Observe each element
-            fadeInElements.forEach(element => {
-                observer.observe(element);
-            });
-
-            // Modal functionality
-            const modal = document.getElementById('modal');
-            const btn = document.querySelector('.btn');
-            const closeButton = document.querySelector('.close-button');
-            const contactForm = document.getElementById('contactForm');
-
-            // Open modal when button is clicked
-            btn.addEventListener('click', function() {
-                openModal();
-            });
-
-            // Close modal when the × is clicked
-            closeButton.addEventListener('click', function() {
-                closeModal();
-            });
-
-            // Close modal when clicking outside of it
-            window.addEventListener('click', function(event) {
-                if (event.target === modal) {
-                    closeModal();
-                }
-            });
-
-            // Close modal with Escape key
-            document.addEventListener('keydown', function(event) {
-                if (event.key === 'Escape' && modal.classList.contains('show')) {
-                    closeModal();
-                }
-            });
-
-            // Handle form submission
-            contactForm.addEventListener('submit', function(event) {
-                event.preventDefault();
-
-                // Here you would typically send the form data to your server
-                // For demonstration, we'll just log it and close the modal
-                const formData = new FormData(contactForm);
-                const formDataObject = {};
-                formData.forEach((value, key) => {
-                    formDataObject[key] = value;
-                });
-
-                console.log('Form submitted:', formDataObject);
-
-                // Show success message
-                alert('Спасибо за вашу заявку! Мы свяжемся с вами в ближайшее время.');
-
-                // Reset form and close modal
-                contactForm.reset();
-                closeModal();
-            });
-
-            function openModal() {
-                modal.style.display = 'flex';
-                setTimeout(() => {
-                    modal.classList.add('show');
-                }, 10);
-                document.body.style.overflow = 'hidden'; // Prevent scrolling behind modal
-            }
-
-            function closeModal() {
-                modal.classList.remove('show');
-                setTimeout(() => {
-                    modal.style.display = 'none';
-                }, 300); // Match transition duration
-                document.body.style.overflow = ''; // Restore scrolling
-            }
-        });
-    </script>
+<script src="script.js"></script>
 </body>
 </html>
